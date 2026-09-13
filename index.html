@@ -199,6 +199,34 @@
     color:var(--silver);font-size:12.5px;margin-top:14px;
   }
 
+  /* ---------- OVERVIEW GRID ---------- */
+  .overview-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+  }
+  .overview-card{
+    background:var(--card);border:1px solid var(--border);
+    border-radius:14px;padding:16px;text-align:left;
+    transition:border-color .2s ease;
+  }
+  .overview-card:hover{border-color:#3a3a3f;}
+  .overview-photo{
+    width:100%;aspect-ratio:1/1;border-radius:11px;
+    background:repeating-linear-gradient(45deg, #1c1c1f 0 12px, #1a1a1d 12px 24px);
+    border:1px dashed var(--border);
+    margin-bottom:16px;
+    display:flex;align-items:center;justify-content:center;
+    overflow:hidden;
+  }
+  .overview-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+  .overview-card h3{
+    font-family:'Inter';font-style:normal;font-weight:600;
+    font-size:16px;color:var(--white);margin-bottom:6px;
+  }
+  .overview-card p{color:var(--silver);font-size:13px;line-height:1.5;}
+  @media(max-width:720px){
+    .overview-grid{grid-template-columns:1fr;}
+  }
+
   /* ---------- TESTIMONIOS ---------- */
   .testimonial-grid{
     display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
@@ -381,6 +409,33 @@
     <div class="product-stage">
       <div class="stage-badge">Edición Biker Day</div>
       <div class="product-photo-slot"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Un solo box, todo listo</span>
+      <h2>Todo lo que incluye tu box</h2>
+      <p class="section-sub">Nada de armar el regalo por tu cuenta. Todo llega junto, en una sola caja que se ve tan bien como lo que hay adentro.</p>
+    </div>
+    <div class="overview-grid">
+      <div class="overview-card">
+        <div class="overview-photo" data-photo="overview-moto.jpg"><span class="photo-placeholder">Foto próx.</span></div>
+        <h3>Moto a escala</h3>
+        <p>Réplica die-cast de colección, acabado premium.</p>
+      </div>
+      <div class="overview-card">
+        <div class="overview-photo" data-photo="overview-snacks.jpg"><span class="photo-placeholder">Foto próx.</span></div>
+        <h3>Snacks</h3>
+        <p>inCachips, Chocman y su bebida energizante favorita, todo incluido.</p>
+      </div>
+      <div class="overview-card">
+        <div class="overview-photo" data-photo="overview-llavero-tarjeta.jpg"><span class="photo-placeholder">Foto próx.</span></div>
+        <h3>Llavero + tarjeta de dedicatoria</h3>
+        <p>Un llavero para llevarlo siempre y una tarjeta para escribirle lo que quieras decirle.</p>
+      </div>
     </div>
   </div>
 </section>
