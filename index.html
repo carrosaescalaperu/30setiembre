@@ -166,6 +166,78 @@
   }
   .item-card p{color:var(--silver);font-size:12.5px;line-height:1.5;}
 
+  /* ---------- MENU PERSONALIZABLE ---------- */
+  .menu-category{margin-bottom:44px;}
+  .menu-category:last-child{margin-bottom:0;}
+  .cat-head{
+    display:flex;align-items:baseline;justify-content:space-between;
+    gap:12px;margin-bottom:16px;padding-bottom:12px;
+    border-bottom:1px solid var(--border);
+  }
+  .cat-head h3{
+    font-family:'Inter';font-style:normal;font-weight:600;
+    font-size:16px;color:var(--white);
+  }
+  .cat-count{
+    color:var(--rose);font-size:12.5px;font-family:'Inter';font-weight:500;
+    white-space:nowrap;
+  }
+  .options-row{
+    display:flex;gap:14px;overflow-x:auto;
+    padding-bottom:8px;
+    scroll-snap-type:x proximity;
+    -webkit-overflow-scrolling:touch;
+  }
+  .options-row::-webkit-scrollbar{height:5px;}
+  .options-row::-webkit-scrollbar-thumb{background:var(--border);border-radius:10px;}
+  .option-card{
+    flex:0 0 208px;scroll-snap-align:start;
+    background:var(--card);border:1.5px solid var(--border);
+    border-radius:16px;padding:12px;cursor:pointer;
+    display:block;position:relative;
+    transition:border-color .15s ease, background .15s ease;
+  }
+  .option-card input{position:absolute;opacity:0;pointer-events:none;}
+  .option-card:hover{border-color:#3a3a3f;}
+  .option-card.selected{
+    border-color:var(--rose);
+    background:var(--rose-soft);
+  }
+  .option-card.selected::after{
+    content:"✓";
+    position:absolute;top:10px;right:10px;
+    width:24px;height:24px;border-radius:50%;
+    background:var(--rose);color:#fff;
+    font-size:13px;font-weight:700;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 2px 8px rgba(0,0,0,0.4);
+  }
+  .option-photo{
+    width:100%;aspect-ratio:1/1;border-radius:11px;
+    background:repeating-linear-gradient(45deg, #1c1c1f 0 10px, #1a1a1d 10px 20px);
+    border:1px solid var(--border);
+    margin-bottom:12px;
+    display:flex;align-items:center;justify-content:center;
+    background-size:cover;background-position:center;
+    overflow:hidden;
+  }
+  .option-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+  .photo-placeholder{
+    color:#4a4a4f;font-size:12px;font-family:'Inter';font-weight:500;
+    text-align:center;
+  }
+  .option-name{
+    display:block;font-family:'Inter';font-weight:600;
+    font-size:15px;color:var(--white);margin-bottom:4px;
+  }
+  .option-desc{
+    display:block;color:var(--silver);font-size:12.5px;line-height:1.45;
+  }
+  @media(min-width:860px){
+    .options-row{flex-wrap:wrap;overflow-x:visible;}
+    .option-card{flex:0 0 calc(25% - 11px);}
+  }
+
   /* ---------- TRUST ---------- */
   .trust-grid{
     display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
@@ -278,43 +350,227 @@
 <section class="section" id="contenido">
   <div class="wrap">
     <div class="section-head">
-      <span class="kicker">Un solo box, todo listo</span>
-      <h2>7 detalles que cuentan una historia</h2>
-      <p class="section-sub">Nada de armar el regalo por tu cuenta. Todo llega junto, en una sola caja que se ve tan bien como lo que hay adentro.</p>
+      <span class="kicker">Arma el box a tu manera</span>
+      <h2>Elige cada detalle, nosotros lo armamos</h2>
+      <p class="section-sub">Un box, seis decisiones simples. Toca la opción que más se parezca a él (o a ustedes).</p>
     </div>
 
-    <div class="items-grid">
-      <div class="item-card">
-        <svg class="item-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="34" r="7"/><circle cx="34" cy="34" r="7"/><path d="M14 34 L22 18 H30"/><path d="M22 18 L30 34"/><path d="M30 34 L38 20 L42 20"/></svg>
-        <h3>Moto a escala</h3>
-        <p>Réplica die-cast de colección, acabado premium.</p>
+    <!-- MOTO A ESCALA — 7 modelos -->
+    <div class="menu-category">
+      <div class="cat-head">
+        <h3>1. Moto a escala</h3>
+        <span class="cat-count">Elige 1 de 7</span>
       </div>
-      <div class="item-card">
-        <svg class="item-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 20 a10 10 0 0 1 20 0 v10 a10 10 0 0 1 -20 0 Z"/><path d="M18 20 v10"/><path d="M30 20 v10"/></svg>
-        <h3>Casco inCachips</h3>
-        <p>Snack peruano favorito, para el antojo de siempre.</p>
-      </div>
-      <div class="item-card">
-        <svg class="item-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="10" width="16" height="30" rx="3"/><path d="M20 10 V6 h8 v4"/></svg>
-        <h3>Lata Monster</h3>
-        <p>La energía para su próxima salida en moto.</p>
-      </div>
-      <div class="item-card">
-        <svg class="item-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="16" width="24" height="18" rx="2"/><path d="M12 22 h24"/><path d="M18 16 v-4 h12 v4"/></svg>
-        <h3>Chocman</h3>
-        <p>El chocolate clásico, para endulzar el detalle.</p>
-      </div>
-      <div class="item-card">
-        <svg class="item-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="14" r="7"/><path d="M18 21 v20"/><path d="M13 34 h10"/></svg>
-        <h3>Llavero</h3>
-        <p>Para que lo lleve con él todos los días.</p>
-      </div>
-      <div class="item-card">
-        <svg class="item-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="12" width="20" height="14" rx="2"/><rect x="18" y="22" width="20" height="14" rx="2"/><path d="M22 17 h12"/><path d="M14 32 h12"/></svg>
-        <h3>2 tarjetas de dedicatoria</h3>
-        <p>Para escribir lo que quieres decirle, en papel.</p>
+      <div class="options-row" data-group="moto" data-label="Moto a escala">
+        <label class="option-card selected">
+          <input type="radio" name="moto" checked>
+          <div class="option-photo" data-photo="moto-sport-racer.jpg"><span class="photo-placeholder">Foto próx.</span></div>
+          <span class="option-name">Sport Racer</span>
+          <span class="option-desc">Deportiva de pista, roja y negra.</span>
+        </label>
+        <label class="option-card">
+          <input type="radio" name="moto">
+          <div class="option-photo" data-photo="moto-cruiser-clasica.jpg"><span class="photo-placeholder">Foto próx.</span></div>
+          <span class="option-name">Cruiser Clásica</span>
+          <span class="option-desc">Estilo americano, cromada y robusta.</span>
+        </label>
+        <label class="option-card">
+          <input type="radio" name="moto">
+          <div class="option-photo" data-photo="moto-naked-urbana.jpg"><span class="photo-placeholder">Foto próx.</span></div>
+          <span class="option-name">Naked Urbana</span>
+          <span class="option-desc">Ligera y directa, para ciudad.</span>
+        </label>
+        <label class="option-card">
+          <input type="radio" name="moto">
+          <div class="option-photo" data-photo="moto-adventure.jpg"><span class="photo-placeholder">Foto próx.</span></div>
+          <span class="option-name">Adventure</span>
+          <span class="option-desc">Todo terreno, para el que sale de ruta.</span>
+        </label>
+        <label class="option-card">
+          <input type="radio" name="moto">
+          <div class="option-photo" data-photo="moto-chopper-vintage.jpg"><span class="photo-placeholder">Foto próx.</span></div>
+          <span class="option-name">Chopper Vintage</span>
+          <span class="option-desc">Línea baja y alargada, aire retro.</span>
+        </label>
+        <label class="option-card">
+          <input type="radio" name="moto">
+          <div class="option-photo" data-photo="moto-scrambler-retro.jpg"><span class="photo-placeholder">Foto próx.</span></div>
+          <span class="option-name">Scrambler Retro</span>
+          <span class="option-desc">Mezcla clásica con aire aventurero.</span>
+        </label>
+        <label class="option-card">
+          <input type="radio" name="moto">
+          <div class="option-photo" data-photo="moto-superbike-gp.jpg"><span class="photo-placeholder">Foto próx.</span></div>
+          <span class="option-name">Superbike GP</span>
+          <span class="option-desc">La más veloz, look de competencia.</span>
+        </label>
       </div>
     </div>
+
+    <!-- INCACHIPS — 4 sabores -->
+    <div class="menu-category">
+      <div class="cat-head">
+        <h3>2. inCachips</h3>
+        <span class="cat-count">Elige 1 de 4</span>
+      </div>
+      <div class="options-row" data-group="chips" data-label="inCachips (sabor)">
+        <label class="option-card selected">
+          <input type="radio" name="chips" checked>
+          <div class="option-photo" data-photo="chips-clasica.jpg"><span class="photo-placeholder">Foto próx.</span></div>
+          <span class="option-name">Clásica</span>
+          <span class="option-desc">El sabor de siempre.</span>
+        </label>
+        <label class="option-card">
+          <input type="radio" name="chips">
+          <div class="option-photo" data-photo="chips-limon.jpg"><span class="photo-placeholder">Foto próx.</span></div>
+          <span class="option-name">Limón</span>
+          <span class="option-desc">Fresca y con toque cítrico.</span>
+        </label>
+        <label class="option-card">
+          <input type="radio" name="chips">
+          <div class="option-photo" data-photo="chips-picante.jpg"><span class="photo-placeholder">Foto próx.</span></div>
+          <span class="option-name">Picante</span>
+          <span class="option-desc">Para el que le gusta con fuego.</span>
+        </label>
+        <label class="option-card">
+          <input type="radio" name="chips">
+          <div class="option-photo" data-photo="chips-parrillera.jpg"><span class="photo-placeholder">Foto próx.</span></div>
+          <span class="option-name">Parrillera</span>
+          <span class="option-desc">Ahumada, sabor a barbacoa.</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- BEBIDA ENERGIZANTE — 2 opciones -->
+    <div class="menu-category">
+      <div class="cat-head">
+        <h3>3. Bebida energizante</h3>
+        <span class="cat-count">Elige 1 de 2</span>
+      </div>
+      <div class="options-row" data-group="bebida" data-label="Bebida energizante">
+        <label class="option-card selected">
+          <input type="radio" name="bebida" checked>
+          <div class="option-photo" data-photo="bebida-monster.jpg"><span class="photo-placeholder">Foto próx.</span></div>
+          <span class="option-name">Monster Energy</span>
+          <span class="option-desc">Clásica, la más pedida.</span>
+        </label>
+        <label class="option-card">
+          <input type="radio" name="bebida">
+          <div class="option-photo" data-photo="bebida-redbull.jpg"><span class="photo-placeholder">Foto próx.</span></div>
+          <span class="option-name">Red Bull</span>
+          <span class="option-desc">La alternativa de siempre.</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- CHOCMAN — 3 alternativas -->
+    <div class="menu-category">
+      <div class="cat-head">
+        <h3>4. Chocman</h3>
+        <span class="cat-count">Elige 1 de 3</span>
+      </div>
+      <div class="options-row" data-group="choc" data-label="Chocman">
+        <label class="option-card selected">
+          <input type="radio" name="choc" checked>
+          <div class="option-photo" data-photo="chocman-clasico.jpg"><span class="photo-placeholder">Foto próx.</span></div>
+          <span class="option-name">Clásico</span>
+          <span class="option-desc">El de toda la vida.</span>
+        </label>
+        <label class="option-card">
+          <input type="radio" name="choc">
+          <div class="option-photo" data-photo="chocman-blanco.jpg"><span class="photo-placeholder">Foto próx.</span></div>
+          <span class="option-name">Blanco</span>
+          <span class="option-desc">Más suave y cremoso.</span>
+        </label>
+        <label class="option-card">
+          <input type="radio" name="choc">
+          <div class="option-photo" data-photo="chocman-doble.jpg"><span class="photo-placeholder">Foto próx.</span></div>
+          <span class="option-name">Doble Choco</span>
+          <span class="option-desc">Para el más goloso.</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- LLAVERO — 5 alternativas -->
+    <div class="menu-category">
+      <div class="cat-head">
+        <h3>5. Llavero</h3>
+        <span class="cat-count">Elige 1 de 5</span>
+      </div>
+      <div class="options-row" data-group="llavero" data-label="Llavero">
+        <label class="option-card selected">
+          <input type="radio" name="llavero" checked>
+          <div class="option-photo" data-photo="llavero-casco.jpg"><span class="photo-placeholder">Foto próx.</span></div>
+          <span class="option-name">Casco</span>
+          <span class="option-desc">Mini casco biker en metal.</span>
+        </label>
+        <label class="option-card">
+          <input type="radio" name="llavero">
+          <div class="option-photo" data-photo="llavero-rueda.jpg"><span class="photo-placeholder">Foto próx.</span></div>
+          <span class="option-name">Rueda</span>
+          <span class="option-desc">Llanta de moto en miniatura.</span>
+        </label>
+        <label class="option-card">
+          <input type="radio" name="llavero">
+          <div class="option-photo" data-photo="llavero-placa.jpg"><span class="photo-placeholder">Foto próx.</span></div>
+          <span class="option-name">Placa</span>
+          <span class="option-desc">Estilo placa de moto personalizable.</span>
+        </label>
+        <label class="option-card">
+          <input type="radio" name="llavero">
+          <div class="option-photo" data-photo="llavero-moto.jpg"><span class="photo-placeholder">Foto próx.</span></div>
+          <span class="option-name">Motocicleta</span>
+          <span class="option-desc">Silueta de moto en metal.</span>
+        </label>
+        <label class="option-card">
+          <input type="radio" name="llavero">
+          <div class="option-photo" data-photo="llavero-calavera.jpg"><span class="photo-placeholder">Foto próx.</span></div>
+          <span class="option-name">Calavera Biker</span>
+          <span class="option-desc">Para el look más rockero.</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- TARJETA DE DEDICATORIA — 5 alternativas -->
+    <div class="menu-category">
+      <div class="cat-head">
+        <h3>6. Tarjeta de dedicatoria</h3>
+        <span class="cat-count">Elige 1 de 5 · vienen 2 tarjetas</span>
+      </div>
+      <div class="options-row" data-group="tarjeta" data-label="Tarjeta de dedicatoria">
+        <label class="option-card selected">
+          <input type="radio" name="tarjeta" checked>
+          <div class="option-photo" data-photo="tarjeta-para-mi-biker.jpg"><span class="photo-placeholder">Foto próx.</span></div>
+          <span class="option-name">Para mi biker</span>
+          <span class="option-desc">Diseño romántico y directo.</span>
+        </label>
+        <label class="option-card">
+          <input type="radio" name="tarjeta">
+          <div class="option-photo" data-photo="tarjeta-feliz-biker-day.jpg"><span class="photo-placeholder">Foto próx.</span></div>
+          <span class="option-name">Feliz Biker Day</span>
+          <span class="option-desc">Temática de la fecha.</span>
+        </label>
+        <label class="option-card">
+          <input type="radio" name="tarjeta">
+          <div class="option-photo" data-photo="tarjeta-con-carino.jpg"><span class="photo-placeholder">Foto próx.</span></div>
+          <span class="option-name">Con cariño</span>
+          <span class="option-desc">Sencilla y tierna.</span>
+        </label>
+        <label class="option-card">
+          <input type="radio" name="tarjeta">
+          <div class="option-photo" data-photo="tarjeta-ruta-y-aventura.jpg"><span class="photo-placeholder">Foto próx.</span></div>
+          <span class="option-name">Ruta y aventura</span>
+          <span class="option-desc">Inspirada en carreteras y viajes.</span>
+        </label>
+        <label class="option-card">
+          <input type="radio" name="tarjeta">
+          <div class="option-photo" data-photo="tarjeta-minimalista.jpg"><span class="photo-placeholder">Foto próx.</span></div>
+          <span class="option-name">Minimalista</span>
+          <span class="option-desc">Solo lo esencial, elegante.</span>
+        </label>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -376,7 +632,7 @@
       <p class="stock-label">Quedan pocas unidades para esta fecha</p>
 
       <div class="hero-ctas" style="margin-top:32px;">
-        <a href="#" class="btn-primary">Pedir mi box ahora</a>
+        <a href="#" id="whatsapp-cta" class="btn-primary">Pedir mi box por WhatsApp</a>
       </div>
       <p class="hero-note">Pago seguro · Coordinación por WhatsApp · Envío a todo Lima</p>
     </div>
@@ -388,5 +644,41 @@
   <p>Grupo Marpe E.I.R.L. · RUC 20261613106</p>
 </footer>
 
+<script>
+  var WHATSAPP_NUMBER = "51970667052";
+
+  document.querySelectorAll('.options-row').forEach(function(row){
+    row.querySelectorAll('.option-card').forEach(function(card){
+      card.addEventListener('click', function(){
+        row.querySelectorAll('.option-card').forEach(function(c){ c.classList.remove('selected'); });
+        card.classList.add('selected');
+        card.querySelector('input').checked = true;
+      });
+    });
+  });
+
+  function buildWhatsappMessage(){
+    var lines = ["Hola! Quiero pedir el Box Biker Day con esta selección:"];
+    document.querySelectorAll('.options-row').forEach(function(row){
+      var label = row.getAttribute('data-label');
+      var selected = row.querySelector('.option-card.selected .option-name');
+      var value = selected ? selected.textContent.trim() : "(sin elegir)";
+      lines.push("• " + label + ": " + value);
+    });
+    lines.push("");
+    lines.push("Precio: S/ 129");
+    return lines.join("\n");
+  }
+
+  var waLink = document.getElementById('whatsapp-cta');
+  if (waLink){
+    waLink.addEventListener('click', function(e){
+      e.preventDefault();
+      var msg = buildWhatsappMessage();
+      var url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(msg);
+      window.open(url, '_blank');
+    });
+  }
+</script>
 </body>
 </html>
