@@ -114,7 +114,7 @@
 
   /* ---------- PRODUCT VISUAL ---------- */
   .product-stage{
-    margin-top:56px;
+    margin-top:40px;
     background:var(--card);
     border:1px solid var(--border);
     border-radius:20px;
@@ -122,6 +122,16 @@
     max-width:640px;
     margin-left:auto;margin-right:auto;
     position:relative;
+  }
+  .product-photo-slot{
+    width:100%;
+    aspect-ratio:4/3;
+    border-radius:12px;
+    background:repeating-linear-gradient(45deg, #1c1c1f 0 12px, #1a1a1d 12px 24px);
+    border:1px dashed var(--border);
+  }
+  .product-photo-slot img{
+    width:100%;height:100%;object-fit:cover;border-radius:12px;display:block;
   }
   .stage-badge{
     position:absolute;top:-14px;left:50%;transform:translateX(-50%);
@@ -136,7 +146,7 @@
   }
 
   /* ---------- CONTENTS ---------- */
-  .section{padding:88px 0;}
+  .section{padding:52px 0;}
   .section-head{text-align:center;max-width:560px;margin:0 auto 52px;}
   .kicker{
     color:var(--rose);font-family:'Chakra Petch';font-style:italic;font-weight:600;
@@ -188,6 +198,44 @@
   .cat-note{
     color:var(--silver);font-size:12.5px;margin-top:14px;
   }
+
+  /* ---------- TESTIMONIOS ---------- */
+  .testimonial-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+  }
+  .testimonial-card{
+    background:var(--card);border:1px solid var(--border);
+    border-radius:14px;padding:24px;
+  }
+  .testimonial-photo{
+    width:40px;height:40px;border-radius:50%;
+    background:var(--rose-soft);border:1px solid rgba(255,92,138,0.35);
+    margin-bottom:16px;
+  }
+  .testimonial-text{
+    color:var(--white);font-size:14px;line-height:1.55;margin-bottom:14px;
+  }
+  .testimonial-name{
+    color:var(--silver);font-size:12.5px;
+  }
+
+  /* ---------- GALERIA DESLIZABLE ---------- */
+  .gallery-row{
+    display:flex;gap:12px;overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    padding-bottom:6px;
+  }
+  .gallery-row::-webkit-scrollbar{height:5px;}
+  .gallery-row::-webkit-scrollbar-thumb{background:var(--border);border-radius:10px;}
+  .gallery-item{
+    flex:0 0 220px;aspect-ratio:3/4;scroll-snap-align:start;
+    border-radius:14px;
+    background:repeating-linear-gradient(45deg, #1c1c1f 0 12px, #1a1a1d 12px 24px);
+    border:1px dashed var(--border);
+    overflow:hidden;
+  }
+  .gallery-item img{width:100%;height:100%;object-fit:cover;display:block;}
   .options-row{
     display:flex;gap:14px;overflow-x:auto;
     padding-bottom:8px;
@@ -320,7 +368,6 @@
 <header>
   <div class="nav">
     <div class="logo">Carros Escala <span>Perú</span></div>
-    <a href="#offer" class="nav-cta">Quiero el box</a>
   </div>
 </header>
 
@@ -329,26 +376,11 @@
     <span class="date-pill">Promo hasta 28 de setiembre · Biker Gift Day</span>
     <h1>Su Hot Wheels ya lo tuvo de niño. <span class="accent">Ahora regálale su moto.</span></h1>
     <p class="hero-sub">Un box pensado para ella: fácil de pedir, hermoso de entregar y perfecto para el biker de su vida. Sin necesidad de saber de marcas ni cilindradas.</p>
-    <div class="hero-ctas">
-      <a href="#offer" class="btn-primary">Ver el box completo</a>
-      <a href="#contenido" class="btn-secondary">Qué incluye</a>
-    </div>
     <p class="hero-note">Envío en caja de regalo · Entrega en Lima 24–48h</p>
 
     <div class="product-stage">
       <div class="stage-badge">Edición Biker Day</div>
-      <svg class="box-illustration" viewBox="0 0 280 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="20" y="60" width="240" height="140" rx="10" fill="#0D0D0E" stroke="#27272A" stroke-width="2"/>
-        <path d="M20 90 L140 60 L260 90" stroke="#27272A" stroke-width="2" fill="none"/>
-        <path d="M140 60 L140 200" stroke="#27272A" stroke-width="2"/>
-        <rect x="34" y="100" width="90" height="14" rx="3" fill="#E10600"/>
-        <rect x="150" y="100" width="96" height="10" rx="3" fill="#3a3a3f"/>
-        <rect x="150" y="118" width="70" height="10" rx="3" fill="#3a3a3f"/>
-        <circle cx="60" cy="160" r="22" fill="none" stroke="#A1A1AA" stroke-width="3"/>
-        <circle cx="60" cy="160" r="7" fill="#A1A1AA"/>
-        <path d="M82 150 L120 130 Q140 122 160 130" stroke="#E10600" stroke-width="4" fill="none" stroke-linecap="round"/>
-        <circle cx="118" cy="132" r="6" fill="#E10600"/>
-      </svg>
+      <div class="product-photo-slot"></div>
     </div>
   </div>
 </section>
@@ -413,166 +445,30 @@
       </div>
     </div>
 
-    <!-- INCACHIPS — 4 sabores -->
+    <!-- TARJETA DE DEDICATORIA — 3 alternativas, elige 1 -->
     <div class="menu-category">
       <div class="cat-head">
-        <h3>2. inCachips</h3>
-        <span class="cat-count">Elige 1 de 4</span>
-      </div>
-      <div class="options-row" data-group="chips" data-label="inCachips (sabor)">
-        <label class="option-card selected">
-          <input type="radio" name="chips" checked>
-          <div class="option-photo" data-photo="chips-clasica.jpg"><span class="photo-placeholder">Foto próx.</span></div>
-          <span class="option-name">Clásica</span>
-          <span class="option-desc">El sabor de siempre.</span>
-        </label>
-        <label class="option-card">
-          <input type="radio" name="chips">
-          <div class="option-photo" data-photo="chips-limon.jpg"><span class="photo-placeholder">Foto próx.</span></div>
-          <span class="option-name">Limón</span>
-          <span class="option-desc">Fresca y con toque cítrico.</span>
-        </label>
-        <label class="option-card">
-          <input type="radio" name="chips">
-          <div class="option-photo" data-photo="chips-picante.jpg"><span class="photo-placeholder">Foto próx.</span></div>
-          <span class="option-name">Picante</span>
-          <span class="option-desc">Para el que le gusta con fuego.</span>
-        </label>
-        <label class="option-card">
-          <input type="radio" name="chips">
-          <div class="option-photo" data-photo="chips-parrillera.jpg"><span class="photo-placeholder">Foto próx.</span></div>
-          <span class="option-name">Parrillera</span>
-          <span class="option-desc">Ahumada, sabor a barbacoa.</span>
-        </label>
-      </div>
-    </div>
-
-    <!-- BEBIDA ENERGIZANTE — 2 opciones -->
-    <div class="menu-category">
-      <div class="cat-head">
-        <h3>3. Bebida energizante</h3>
-        <span class="cat-count">Elige 1 de 2</span>
-      </div>
-      <div class="options-row" data-group="bebida" data-label="Bebida energizante">
-        <label class="option-card selected">
-          <input type="radio" name="bebida" checked>
-          <div class="option-photo" data-photo="bebida-monster.jpg"><span class="photo-placeholder">Foto próx.</span></div>
-          <span class="option-name">Monster Energy</span>
-          <span class="option-desc">Clásica, la más pedida.</span>
-        </label>
-        <label class="option-card">
-          <input type="radio" name="bebida">
-          <div class="option-photo" data-photo="bebida-redbull.jpg"><span class="photo-placeholder">Foto próx.</span></div>
-          <span class="option-name">Red Bull</span>
-          <span class="option-desc">La alternativa de siempre.</span>
-        </label>
-      </div>
-    </div>
-
-    <!-- CHOCMAN — 3 alternativas -->
-    <div class="menu-category">
-      <div class="cat-head">
-        <h3>4. Chocman</h3>
+        <h3>2. Tarjeta de dedicatoria <span class="cat-editable">(texto modificable)</span></h3>
         <span class="cat-count">Elige 1 de 3</span>
       </div>
-      <div class="options-row" data-group="choc" data-label="Chocman">
+      <div class="options-row" data-group="tarjeta" data-label="Tarjeta de dedicatoria">
         <label class="option-card selected">
-          <input type="radio" name="choc" checked>
-          <div class="option-photo" data-photo="chocman-clasico.jpg"><span class="photo-placeholder">Foto próx.</span></div>
-          <span class="option-name">Clásico</span>
-          <span class="option-desc">El de toda la vida.</span>
-        </label>
-        <label class="option-card">
-          <input type="radio" name="choc">
-          <div class="option-photo" data-photo="chocman-blanco.jpg"><span class="photo-placeholder">Foto próx.</span></div>
-          <span class="option-name">Blanco</span>
-          <span class="option-desc">Más suave y cremoso.</span>
-        </label>
-        <label class="option-card">
-          <input type="radio" name="choc">
-          <div class="option-photo" data-photo="chocman-doble.jpg"><span class="photo-placeholder">Foto próx.</span></div>
-          <span class="option-name">Doble Choco</span>
-          <span class="option-desc">Para el más goloso.</span>
-        </label>
-      </div>
-    </div>
-
-    <!-- LLAVERO — 5 alternativas -->
-    <div class="menu-category">
-      <div class="cat-head">
-        <h3>5. Llavero</h3>
-        <span class="cat-count">Elige 1 de 5</span>
-      </div>
-      <div class="options-row" data-group="llavero" data-label="Llavero">
-        <label class="option-card selected">
-          <input type="radio" name="llavero" checked>
-          <div class="option-photo" data-photo="llavero-casco.jpg"><span class="photo-placeholder">Foto próx.</span></div>
-          <span class="option-name">Casco</span>
-          <span class="option-desc">Mini casco biker en metal.</span>
-        </label>
-        <label class="option-card">
-          <input type="radio" name="llavero">
-          <div class="option-photo" data-photo="llavero-rueda.jpg"><span class="photo-placeholder">Foto próx.</span></div>
-          <span class="option-name">Rueda</span>
-          <span class="option-desc">Llanta de moto en miniatura.</span>
-        </label>
-        <label class="option-card">
-          <input type="radio" name="llavero">
-          <div class="option-photo" data-photo="llavero-placa.jpg"><span class="photo-placeholder">Foto próx.</span></div>
-          <span class="option-name">Placa</span>
-          <span class="option-desc">Estilo placa de moto personalizable.</span>
-        </label>
-        <label class="option-card">
-          <input type="radio" name="llavero">
-          <div class="option-photo" data-photo="llavero-moto.jpg"><span class="photo-placeholder">Foto próx.</span></div>
-          <span class="option-name">Motocicleta</span>
-          <span class="option-desc">Silueta de moto en metal.</span>
-        </label>
-        <label class="option-card">
-          <input type="radio" name="llavero">
-          <div class="option-photo" data-photo="llavero-calavera.jpg"><span class="photo-placeholder">Foto próx.</span></div>
-          <span class="option-name">Calavera Biker</span>
-          <span class="option-desc">Para el look más rockero.</span>
-        </label>
-      </div>
-    </div>
-
-    <!-- TARJETA DE DEDICATORIA — 5 alternativas, elige 2 -->
-    <div class="menu-category">
-      <div class="cat-head">
-        <h3>6. Tarjeta de dedicatoria <span class="cat-editable">(texto modificable)</span></h3>
-        <span class="cat-count">Elige 2 de 5</span>
-      </div>
-      <div class="options-row" data-group="tarjeta" data-label="Tarjetas de dedicatoria" data-max="2">
-        <label class="option-card selected">
-          <input type="checkbox" name="tarjeta" checked>
+          <input type="radio" name="tarjeta" checked>
           <div class="option-photo" data-photo="tarjeta-para-mi-biker.jpg"><span class="photo-placeholder">Foto próx.</span></div>
           <span class="option-name">Para mi biker</span>
           <span class="option-desc">Diseño romántico y directo.</span>
         </label>
-        <label class="option-card selected">
-          <input type="checkbox" name="tarjeta" checked>
+        <label class="option-card">
+          <input type="radio" name="tarjeta">
           <div class="option-photo" data-photo="tarjeta-feliz-biker-day.jpg"><span class="photo-placeholder">Foto próx.</span></div>
           <span class="option-name">Feliz Biker Day</span>
           <span class="option-desc">Temática de la fecha.</span>
         </label>
         <label class="option-card">
-          <input type="checkbox" name="tarjeta">
+          <input type="radio" name="tarjeta">
           <div class="option-photo" data-photo="tarjeta-con-carino.jpg"><span class="photo-placeholder">Foto próx.</span></div>
           <span class="option-name">Con cariño</span>
           <span class="option-desc">Sencilla y tierna.</span>
-        </label>
-        <label class="option-card">
-          <input type="checkbox" name="tarjeta">
-          <div class="option-photo" data-photo="tarjeta-ruta-y-aventura.jpg"><span class="photo-placeholder">Foto próx.</span></div>
-          <span class="option-name">Ruta y aventura</span>
-          <span class="option-desc">Inspirada en carreteras y viajes.</span>
-        </label>
-        <label class="option-card">
-          <input type="checkbox" name="tarjeta">
-          <div class="option-photo" data-photo="tarjeta-minimalista.jpg"><span class="photo-placeholder">Foto próx.</span></div>
-          <span class="option-name">Minimalista</span>
-          <span class="option-desc">Solo lo esencial, elegante.</span>
         </label>
       </div>
       <p class="cat-note">Cada tarjeta lleva un texto propio, que puedes cambiar antes de enviar tu pedido por WhatsApp.</p>
@@ -599,6 +495,49 @@
         <a href="#" id="whatsapp-cta" class="btn-primary">Pedir mi box por WhatsApp</a>
       </div>
       <p class="hero-note">Pago seguro · Coordinación por WhatsApp · Envío a todo Lima</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Ya lo compraron</span>
+      <h2>Clientes satisfechos</h2>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-photo"></div>
+        <p class="testimonial-text">"Llegó justo a tiempo y la presentación fue espectacular, mi enamorado no se lo esperaba."</p>
+        <span class="testimonial-name">— Valeria R.</span>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-photo"></div>
+        <p class="testimonial-text">"La moto es igualita a la real, y los detalles adicionales hicieron todo mucho mejor."</p>
+        <span class="testimonial-name">— Camila S.</span>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-photo"></div>
+        <p class="testimonial-text">"Coordinaron todo por WhatsApp, súper fácil. Ya voy a pedir otro para diciembre."</p>
+        <span class="testimonial-name">— Fiorella M.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Pedidos reales</span>
+      <h2>Referencias y capturas</h2>
+    </div>
+    <div class="gallery-row">
+      <div class="gallery-item" data-photo="referencia-1.jpg"></div>
+      <div class="gallery-item" data-photo="referencia-2.jpg"></div>
+      <div class="gallery-item" data-photo="referencia-3.jpg"></div>
+      <div class="gallery-item" data-photo="referencia-4.jpg"></div>
+      <div class="gallery-item" data-photo="referencia-5.jpg"></div>
+      <div class="gallery-item" data-photo="referencia-6.jpg"></div>
     </div>
   </div>
 </section>
@@ -640,7 +579,7 @@
       </div>
       <div>
         <h3>Las palabras también van en la caja</h3>
-        <p>Incluimos dos tarjetas para dedicatoria que, si gustas, puedes modificar, porque lo que más recuerda un biker no es la moto — es quién se la regaló.</p>
+        <p>Incluimos dos tarjetas para dedicatoria escritas a mano por ti, porque lo que más recuerda un biker no es la moto — es quién se la regaló.</p>
       </div>
     </div>
   </div>
