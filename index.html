@@ -182,6 +182,12 @@
     color:var(--rose);font-size:12.5px;font-family:'Inter';font-weight:500;
     white-space:nowrap;
   }
+  .cat-editable{
+    color:var(--silver);font-family:'Inter';font-weight:400;font-size:13px;
+  }
+  .cat-note{
+    color:var(--silver);font-size:12.5px;margin-top:14px;
+  }
   .options-row{
     display:flex;gap:14px;overflow-x:auto;
     padding-bottom:8px;
@@ -320,7 +326,7 @@
 
 <section class="hero">
   <div class="wrap hero-inner">
-    <span class="date-pill">18 de octubre · Biker Gift Day</span>
+    <span class="date-pill">Promo hasta 28 de setiembre · Biker Gift Day</span>
     <h1>Su Hot Wheels ya lo tuvo de niño. <span class="accent">Ahora regálale su moto.</span></h1>
     <p class="hero-sub">Un box pensado para ella: fácil de pedir, hermoso de entregar y perfecto para el biker de su vida. Sin necesidad de saber de marcas ni cilindradas.</p>
     <div class="hero-ctas">
@@ -531,46 +537,69 @@
       </div>
     </div>
 
-    <!-- TARJETA DE DEDICATORIA — 5 alternativas -->
+    <!-- TARJETA DE DEDICATORIA — 5 alternativas, elige 2 -->
     <div class="menu-category">
       <div class="cat-head">
-        <h3>6. Tarjeta de dedicatoria</h3>
-        <span class="cat-count">Elige 1 de 5 · vienen 2 tarjetas</span>
+        <h3>6. Tarjeta de dedicatoria <span class="cat-editable">(texto modificable)</span></h3>
+        <span class="cat-count">Elige 2 de 5</span>
       </div>
-      <div class="options-row" data-group="tarjeta" data-label="Tarjeta de dedicatoria">
+      <div class="options-row" data-group="tarjeta" data-label="Tarjetas de dedicatoria" data-max="2">
         <label class="option-card selected">
-          <input type="radio" name="tarjeta" checked>
+          <input type="checkbox" name="tarjeta" checked>
           <div class="option-photo" data-photo="tarjeta-para-mi-biker.jpg"><span class="photo-placeholder">Foto próx.</span></div>
           <span class="option-name">Para mi biker</span>
           <span class="option-desc">Diseño romántico y directo.</span>
         </label>
-        <label class="option-card">
-          <input type="radio" name="tarjeta">
+        <label class="option-card selected">
+          <input type="checkbox" name="tarjeta" checked>
           <div class="option-photo" data-photo="tarjeta-feliz-biker-day.jpg"><span class="photo-placeholder">Foto próx.</span></div>
           <span class="option-name">Feliz Biker Day</span>
           <span class="option-desc">Temática de la fecha.</span>
         </label>
         <label class="option-card">
-          <input type="radio" name="tarjeta">
+          <input type="checkbox" name="tarjeta">
           <div class="option-photo" data-photo="tarjeta-con-carino.jpg"><span class="photo-placeholder">Foto próx.</span></div>
           <span class="option-name">Con cariño</span>
           <span class="option-desc">Sencilla y tierna.</span>
         </label>
         <label class="option-card">
-          <input type="radio" name="tarjeta">
+          <input type="checkbox" name="tarjeta">
           <div class="option-photo" data-photo="tarjeta-ruta-y-aventura.jpg"><span class="photo-placeholder">Foto próx.</span></div>
           <span class="option-name">Ruta y aventura</span>
           <span class="option-desc">Inspirada en carreteras y viajes.</span>
         </label>
         <label class="option-card">
-          <input type="radio" name="tarjeta">
+          <input type="checkbox" name="tarjeta">
           <div class="option-photo" data-photo="tarjeta-minimalista.jpg"><span class="photo-placeholder">Foto próx.</span></div>
           <span class="option-name">Minimalista</span>
           <span class="option-desc">Solo lo esencial, elegante.</span>
         </label>
       </div>
+      <p class="cat-note">Cada tarjeta lleva un texto propio, que puedes cambiar antes de enviar tu pedido por WhatsApp.</p>
     </div>
 
+  </div>
+</section>
+
+<section class="section" id="offer">
+  <div class="wrap" style="max-width:560px;">
+    <div class="offer">
+      <span class="kicker">Box Biker Day</span>
+      <h2 style="font-size:24px;">Moto a escala + 6 detalles más</h2>
+      <div class="price-row">
+        <span class="price">S/ 129</span>
+        <span class="price-old">S/ 169</span>
+      </div>
+      <span class="price-note">Promoción válida hasta el 28 de setiembre</span>
+
+      <div class="stock-bar"><div class="stock-fill"></div></div>
+      <p class="stock-label">Quedan pocas unidades para esta fecha</p>
+
+      <div class="hero-ctas" style="margin-top:32px;">
+        <a href="#" id="whatsapp-cta" class="btn-primary">Pedir mi box por WhatsApp</a>
+      </div>
+      <p class="hero-note">Pago seguro · Coordinación por WhatsApp · Envío a todo Lima</p>
+    </div>
   </div>
 </section>
 
@@ -595,7 +624,7 @@
       <div class="trust-item">
         <span class="num">03</span>
         <strong>Entrega puntual</strong>
-        <p>Coordinamos la fecha contigo para que llegue justo el 18.</p>
+        <p>Coordinamos la fecha contigo para que llegue a tiempo.</p>
       </div>
     </div>
   </div>
@@ -611,30 +640,8 @@
       </div>
       <div>
         <h3>Las palabras también van en la caja</h3>
-        <p>Incluimos dos tarjetas para dedicatoria escritas a mano por ti, porque lo que más recuerda un biker no es la moto — es quién se la regaló.</p>
+        <p>Incluimos dos tarjetas para dedicatoria que, si gustas, puedes modificar, porque lo que más recuerda un biker no es la moto — es quién se la regaló.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="offer">
-  <div class="wrap" style="max-width:560px;">
-    <div class="offer">
-      <span class="kicker">Box Biker Day</span>
-      <h2 style="font-size:24px;">Moto a escala + 6 detalles más</h2>
-      <div class="price-row">
-        <span class="price">S/ 129</span>
-        <span class="price-old">S/ 169</span>
-      </div>
-      <span class="price-note">Precio especial válido hasta el 18 de octubre</span>
-
-      <div class="stock-bar"><div class="stock-fill"></div></div>
-      <p class="stock-label">Quedan pocas unidades para esta fecha</p>
-
-      <div class="hero-ctas" style="margin-top:32px;">
-        <a href="#" id="whatsapp-cta" class="btn-primary">Pedir mi box por WhatsApp</a>
-      </div>
-      <p class="hero-note">Pago seguro · Coordinación por WhatsApp · Envío a todo Lima</p>
     </div>
   </div>
 </section>
@@ -648,11 +655,35 @@
   var WHATSAPP_NUMBER = "51970667052";
 
   document.querySelectorAll('.options-row').forEach(function(row){
-    row.querySelectorAll('.option-card').forEach(function(card){
+    var max = parseInt(row.getAttribute('data-max') || "1", 10);
+    var cards = Array.prototype.slice.call(row.querySelectorAll('.option-card'));
+
+    cards.forEach(function(card){
       card.addEventListener('click', function(){
-        row.querySelectorAll('.option-card').forEach(function(c){ c.classList.remove('selected'); });
-        card.classList.add('selected');
-        card.querySelector('input').checked = true;
+        var input = card.querySelector('input');
+
+        if (max === 1){
+          cards.forEach(function(c){ c.classList.remove('selected'); });
+          card.classList.add('selected');
+          input.checked = true;
+          return;
+        }
+
+        // multi-select con límite (checkboxes)
+        var selected = cards.filter(function(c){ return c.classList.contains('selected'); });
+
+        if (card.classList.contains('selected')){
+          card.classList.remove('selected');
+          input.checked = false;
+        } else {
+          if (selected.length >= max){
+            var oldest = selected[0];
+            oldest.classList.remove('selected');
+            oldest.querySelector('input').checked = false;
+          }
+          card.classList.add('selected');
+          input.checked = true;
+        }
       });
     });
   });
@@ -661,9 +692,10 @@
     var lines = ["Hola! Quiero pedir el Box Biker Day con esta selección:"];
     document.querySelectorAll('.options-row').forEach(function(row){
       var label = row.getAttribute('data-label');
-      var selected = row.querySelector('.option-card.selected .option-name');
-      var value = selected ? selected.textContent.trim() : "(sin elegir)";
-      lines.push("• " + label + ": " + value);
+      var selectedCards = row.querySelectorAll('.option-card.selected .option-name');
+      var values = Array.prototype.map.call(selectedCards, function(el){ return el.textContent.trim(); });
+      if (values.length === 0) values = ["(sin elegir)"];
+      lines.push("• " + label + ": " + values.join(" + "));
     });
     lines.push("");
     lines.push("Precio: S/ 129");
