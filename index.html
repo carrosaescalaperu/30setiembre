@@ -227,6 +227,70 @@
     .overview-grid{grid-template-columns:1fr;}
   }
 
+  /* ---------- COMO PAGAR ---------- */
+  .perk-banner{
+    display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+    background:var(--rose-soft);
+    border:1px solid rgba(255,92,138,0.35);
+    border-radius:14px;
+    padding:20px;
+    margin-bottom:24px;
+  }
+  .pb-text{flex:1;min-width:200px;color:var(--silver);font-size:13.5px;line-height:1.6;}
+  .pb-text strong{color:var(--white);font-family:'Inter';font-weight:600;}
+  .pb-note{margin-top:10px;color:var(--white);font-size:13px;line-height:1.75;}
+  .card-btn{
+    display:inline-flex;align-items:center;gap:8px;flex:none;
+    background:var(--red);color:#fff;
+    padding:12px 20px;border-radius:8px;
+    font-family:'Chakra Petch';font-style:italic;font-weight:700;
+    font-size:13.5px;letter-spacing:.02em;
+    white-space:nowrap;
+  }
+  .card-btn svg{width:18px;height:18px;}
+
+  .pay-card{
+    background:var(--card);border:1px solid var(--border);
+    border-radius:16px;padding:28px 24px;
+  }
+  .why-item{
+    display:flex;gap:16px;align-items:flex-start;
+    margin-bottom:22px;
+  }
+  .why-item:last-of-type{margin-bottom:0;}
+  .wi-num{
+    flex:none;width:32px;height:32px;border-radius:50%;
+    background:var(--red);color:#fff;
+    font-family:'Chakra Petch';font-style:italic;font-weight:700;font-size:14px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .why-item h3{
+    font-family:'Inter';font-style:normal;font-weight:600;
+    font-size:14.5px;color:var(--white);margin-bottom:4px;
+  }
+  .why-item p{color:var(--silver);font-size:13px;line-height:1.55;}
+
+  .pay-method{
+    display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+    background:var(--bg);border:1px solid var(--border);
+    border-radius:12px;padding:18px;margin-top:24px;
+  }
+  .pm-icon{
+    flex:none;
+    background:var(--red);color:#fff;
+    font-family:'Chakra Petch';font-style:italic;font-weight:700;
+    font-size:14px;padding:10px 16px;border-radius:8px;
+  }
+  .pay-details{flex:1;min-width:200px;}
+  .pd-row{
+    display:flex;justify-content:space-between;gap:12px;
+    padding:6px 0;border-bottom:1px solid var(--border);
+    font-size:13px;
+  }
+  .pd-row:last-child{border-bottom:none;}
+  .pd-label{color:var(--silver);}
+  .pd-value{color:var(--white);font-weight:600;text-align:right;}
+
   /* ---------- TESTIMONIOS ---------- */
   .testimonial-grid{
     display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
@@ -404,7 +468,7 @@
     <span class="date-pill">Promo hasta 28 de setiembre · Biker Gift Day</span>
     <h1>Su Hot Wheels ya lo tuvo de niño. <span class="accent">Ahora regálale su moto.</span></h1>
     <p class="hero-sub">Un box pensado para ella: fácil de pedir, hermoso de entregar y perfecto para el biker de su vida. Sin necesidad de saber de marcas ni cilindradas.</p>
-    <p class="hero-note">Envío en caja de regalo · Entrega en Lima 24–48h</p>
+    <p class="hero-note">Envío gratis a todo el Perú!</p>
 
     <div class="product-stage">
       <div class="stage-badge">Edición Biker Day</div>
@@ -445,57 +509,57 @@
     <div class="section-head">
       <span class="kicker">Arma el box a tu manera</span>
       <h2>Elige cada detalle, nosotros lo armamos</h2>
-      <p class="section-sub">Un box, seis decisiones simples. Toca la opción que más se parezca a él (o a ustedes).</p>
+      <p class="section-sub">Un box, solo elije la moto y la dedicatoria.</p>
     </div>
 
     <!-- MOTO A ESCALA — 7 modelos -->
     <div class="menu-category">
       <div class="cat-head">
-        <h3>1. Moto a escala</h3>
+        <h3>1. Moto a escala (24cm de largo. Tiene luces y sonido)</h3>
         <span class="cat-count">Elige 1 de 7</span>
       </div>
       <div class="options-row" data-group="moto" data-label="Moto a escala">
         <label class="option-card selected">
           <input type="radio" name="moto" checked>
           <div class="option-photo" data-photo="moto-sport-racer.jpg"><span class="photo-placeholder">Foto próx.</span></div>
-          <span class="option-name">Sport Racer</span>
-          <span class="option-desc">Deportiva de pista, roja y negra.</span>
+          <span class="option-name">Ducati Panigale V4</span>
+          <span class="option-desc">La más elegante, exclusiva y deseada por cualquier motero.</span>
         </label>
         <label class="option-card">
           <input type="radio" name="moto">
           <div class="option-photo" data-photo="moto-cruiser-clasica.jpg"><span class="photo-placeholder">Foto próx.</span></div>
-          <span class="option-name">Cruiser Clásica</span>
-          <span class="option-desc">Estilo americano, cromada y robusta.</span>
+          <span class="option-name">BMW S1000RR</span>
+          <span class="option-desc">Diseño moderno, llamativo y con estética súper deportiva.</span>
         </label>
         <label class="option-card">
           <input type="radio" name="moto">
           <div class="option-photo" data-photo="moto-naked-urbana.jpg"><span class="photo-placeholder">Foto próx.</span></div>
-          <span class="option-name">Naked Urbana</span>
-          <span class="option-desc">Ligera y directa, para ciudad.</span>
+          <span class="option-name">Kawasaki Ninja H2R</span>
+          <span class="option-desc">Aspecto futurista e imponente.</span>
         </label>
         <label class="option-card">
           <input type="radio" name="moto">
           <div class="option-photo" data-photo="moto-adventure.jpg"><span class="photo-placeholder">Foto próx.</span></div>
-          <span class="option-name">Adventure</span>
-          <span class="option-desc">Todo terreno, para el que sale de ruta.</span>
+          <span class="option-name">Yamaha YZF-R1</span>
+          <span class="option-desc">El sueño de muchos moteros.</span>
         </label>
         <label class="option-card">
           <input type="radio" name="moto">
           <div class="option-photo" data-photo="moto-chopper-vintage.jpg"><span class="photo-placeholder">Foto próx.</span></div>
-          <span class="option-name">Chopper Vintage</span>
-          <span class="option-desc">Línea baja y alargada, aire retro.</span>
+          <span class="option-name">Honda CBR1000RR-R</span>
+          <span class="option-desc">Un modelo legendario de carreras con estilo impecable.</span>
         </label>
         <label class="option-card">
           <input type="radio" name="moto">
           <div class="option-photo" data-photo="moto-scrambler-retro.jpg"><span class="photo-placeholder">Foto próx.</span></div>
-          <span class="option-name">Scrambler Retro</span>
-          <span class="option-desc">Mezcla clásica con aire aventurero.</span>
+          <span class="option-name">Kawasaki Ninja H2</span>
+          <span class="option-desc">Estilo agresivo, potente y reconocible a primera vista.</span>
         </label>
         <label class="option-card">
           <input type="radio" name="moto">
           <div class="option-photo" data-photo="moto-superbike-gp.jpg"><span class="photo-placeholder">Foto próx.</span></div>
-          <span class="option-name">Superbike GP</span>
-          <span class="option-desc">La más veloz, look de competencia.</span>
+          <span class="option-name">Suzuki GSX-R1000R</span>
+          <span class="option-desc">Para los amantes del diseño deportivo clásico y tradicional.</span>
         </label>
       </div>
     </div>
@@ -538,7 +602,7 @@
       <span class="kicker">Box Biker Day</span>
       <h2 style="font-size:24px;">Moto a escala + 6 detalles más</h2>
       <div class="price-row">
-        <span class="price">S/ 129</span>
+        <span class="price">S/ 149</span>
         <span class="price-old">S/ 169</span>
       </div>
       <span class="price-note">Promoción válida hasta el 28 de setiembre</span>
@@ -549,7 +613,79 @@
       <div class="hero-ctas" style="margin-top:32px;">
         <a href="#" id="whatsapp-cta" class="btn-primary">Pedir mi box por WhatsApp</a>
       </div>
-      <p class="hero-note">Pago seguro · Coordinación por WhatsApp · Envío a todo Lima</p>
+      <p class="hero-note">Pago seguro · Coordinación por WhatsApp · Envío a todo el Perú</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap" style="max-width:640px;">
+    <div class="section-head">
+      <span class="kicker">Sin vueltas, sin formularios</span>
+      <h2>Cómo pagar</h2>
+      <p class="section-sub">Coordinas el modelo y el pago directo conmigo por WhatsApp — sin formularios, sin vueltas.</p>
+    </div>
+
+    <div class="pay-card">
+      <div class="why-item">
+        <div class="wi-num">1</div>
+        <div>
+          <h3>Separas con solo S/50</h3>
+          <p>No necesitas pagar el 100%. Con un adelanto inicial de S/50 iniciamos la preparación y empaque de tu box.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="wi-num">2</div>
+        <div>
+          <h3>Verificación real</h3>
+          <p>Antes de embalar, te enviamos fotos y videos de tu box exacto para que compruebes su estado impecable.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="wi-num">3</div>
+        <div>
+          <h3>Despacho en Shalom</h3>
+          <p>Llevamos tu paquete a la agencia y te enviamos tu voucher/guía oficial de Shalom para que corrobores que todos tus datos de destino estén 100% correctos.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="wi-num">4</div>
+        <div>
+          <h3>Cancelación y clave de recojo</h3>
+          <p>Una vez que verifiques tu voucher con Shalom, cancelas el saldo restante y te brindamos tu clave de seguridad para que retires tu paquete.</p>
+        </div>
+      </div>
+
+      <div class="perk-banner" style="margin-top:8px;">
+        <div class="pb-text">
+          <strong>Tu compra está 100% respaldada</strong>
+          <div class="pb-note">
+            Somos una empresa constituida con RUC activo.<br>
+            Te enviamos referencias de clientes y envíos anteriores para tu total tranquilidad.<br>
+            Emitimos boleta o factura electrónica.<br>
+            Cuentas con garantía total sobre tu producto hasta que llegue y lo tengas en tus manos en tu agencia Shalom.
+          </div>
+        </div>
+      </div>
+
+      <div class="pay-method">
+        <div class="pm-icon">Plin</div>
+        <div class="pay-details">
+          <div class="pd-row"><span class="pd-label">Método</span><span class="pd-value">970 667 052 · Plin</span></div>
+          <div class="pd-row"><span class="pd-label">Titular</span><span class="pd-value">Grupo Marpe EIRL</span></div>
+          <div class="pd-row"><span class="pd-label">RUC</span><span class="pd-value">20261613106</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="perk-banner" style="margin-top:22px;margin-bottom:0;">
+      <div class="pb-text">
+        <strong>Paso previo:</strong> comunícate al 970 667 052, donde te responderá un asesor para terminar de resolver tus dudas y coordinar el destino de tu pedido.
+      </div>
+      <a href="#" id="whatsapp-cta-2" class="card-btn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.001 2C6.478 2 2 6.477 2 12c0 1.986.579 3.926 1.671 5.593L2 22l4.522-1.634A9.955 9.955 0 0012.001 22C17.523 22 22 17.523 22 12S17.523 2 12.001 2zm0 18.062a8.02 8.02 0 01-4.31-1.253l-.309-.184-3.198 1.155 1.174-3.11-.202-.32A8.024 8.024 0 013.938 12c0-4.444 3.618-8.062 8.063-8.062S20.062 7.556 20.062 12 16.446 20.062 12.001 20.062z"/></svg>
+        Pedir mi box por WhatsApp
+      </a>
     </div>
   </div>
 </section>
@@ -634,7 +770,7 @@
       </div>
       <div>
         <h3>Las palabras también van en la caja</h3>
-        <p>Incluimos dos tarjetas para dedicatoria escritas a mano por ti, porque lo que más recuerda un biker no es la moto — es quién se la regaló.</p>
+        <p>Incluimos una tarjeta de dedicatoria escritas por ti, porque lo que más recuerda un biker no es la moto — es quién se la regaló.</p>
       </div>
     </div>
   </div>
@@ -696,15 +832,17 @@
     return lines.join("\n");
   }
 
-  var waLink = document.getElementById('whatsapp-cta');
-  if (waLink){
-    waLink.addEventListener('click', function(e){
-      e.preventDefault();
-      var msg = buildWhatsappMessage();
-      var url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(msg);
-      window.open(url, '_blank');
-    });
-  }
+  ["whatsapp-cta", "whatsapp-cta-2"].forEach(function(id){
+    var waLink = document.getElementById(id);
+    if (waLink){
+      waLink.addEventListener('click', function(e){
+        e.preventDefault();
+        var msg = buildWhatsappMessage();
+        var url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(msg);
+        window.open(url, '_blank');
+      });
+    }
+  });
 </script>
 </body>
 </html>
