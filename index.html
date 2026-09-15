@@ -325,6 +325,13 @@
   }
   .gallery-row::-webkit-scrollbar{height:5px;}
   .gallery-row::-webkit-scrollbar-thumb{background:var(--border);border-radius:10px;}
+  @media(max-width:720px){
+  .gallery-item{
+    flex:0 0 82vw !important;
+    width:82vw !important;
+    flex-shrink:0 !important;
+  }
+}
 .gallery-item{
 
       flex:0 0 clamp(220px, 82vw, 260px);aspect-ratio:3/4;scroll-snap-align:start;
