@@ -140,7 +140,8 @@ src="https://www.facebook.com/tr?id=1597676798806050&ev=PageView&noscript=1"
   }
 
   /* ---------- PRODUCT VISUAL ---------- */
-  .product-stage{
+
+.product-stage{
     margin-top:40px;
     background:var(--card);
     border:1px solid var(--border);
@@ -150,12 +151,21 @@ src="https://www.facebook.com/tr?id=1597676798806050&ev=PageView&noscript=1"
     margin-left:auto;margin-right:auto;
     position:relative;
   }
+  .product-photo-slots{
+    display:flex;gap:14px;
+  }
   .product-photo-slot{
     width:100%;
-    aspect-ratio:4/3;
+    aspect-ratio:3/4;
     border-radius:12px;
     background:repeating-linear-gradient(45deg, #1c1c1f 0 12px, #1a1a1d 12px 24px);
     border:1px dashed var(--border);
+  }
+  @media(max-width:720px){
+    .product-photo-slots{flex-direction:column;}
+  }
+
+  
   }
   .product-photo-slot img{
     width:100%;height:100%;object-fit:cover;border-radius:12px;display:block;
@@ -509,14 +519,21 @@ src="https://www.facebook.com/tr?id=1597676798806050&ev=PageView&noscript=1"
     <p class="hero-sub">Un box pensado para ella: fácil de pedir, hermoso de entregar y perfecto para el biker de su vida. Sin necesidad de saber de marcas ni cilindradas.</p>
     <p class="hero-note">Envío gratis a todo el Perú!</p>
 
+
 <div class="product-stage">
   <div class="stage-badge">Edición Biker Day</div>
-  <div class="product-photo-slot">
-    <img src="https://res.cloudinary.com/tmb9x5wi/image/upload/w_600,q_auto,f_auto/IMG_7737.heic" alt="Box Biker Day">
+  <div class="product-photo-slots">
+    <div class="product-photo-slot">
+      <img src="https://res.cloudinary.com/tmb9x5wi/image/upload/w_600,q_auto,f_auto/IMG_7737.heic" alt="Box Biker Day">
+    </div>
+    <div class="product-photo-slot">
+      <img src="https://res.cloudinary.com/tmb9x5wi/image/upload/w_600,q_auto,f_auto/IMG_7944.heic" alt="Box Biker Day">
+    </div>
   </div>
 </div>
-</section>
 
+
+  
 <section class="section">
   <div class="wrap">
     <div class="section-head">
