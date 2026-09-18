@@ -247,6 +247,34 @@ src="https://www.facebook.com/tr?id=1597676798806050&ev=PageView&noscript=1"
     color:var(--silver);font-size:12.5px;margin-top:14px;
   }
 
+  /* ---------- BENEFICIOS ---------- */
+  .benefit-grid{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:16px;
+    text-align:left;
+  }
+  .benefit-card{
+    background:var(--card);border:1px solid var(--border);
+    border-radius:14px;padding:24px 22px;
+    transition:border-color .2s ease;
+  }
+  .benefit-card:hover{border-color:#3a3a3f;}
+  .benefit-card h3{
+    font-family:'Inter';font-style:normal;font-weight:600;
+    font-size:15.5px;color:var(--white);margin-bottom:8px;
+    padding-left:16px;position:relative;
+  }
+  .benefit-card h3::before{
+    content:"";
+    position:absolute;left:0;top:6px;
+    width:3px;height:16px;border-radius:2px;
+    background:var(--red);
+  }
+  .benefit-card p{color:var(--silver);font-size:13.5px;line-height:1.6;}
+  @media(max-width:640px){
+    .benefit-grid{grid-template-columns:1fr;}
+  }
+
+  
   /* ---------- OVERVIEW GRID ---------- */
   .overview-grid{
     display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
