@@ -378,18 +378,32 @@ src="https://www.facebook.com/tr?id=1597676798806050&ev=PageView&noscript=1"
   }
   .testimonial-card{
     background:var(--card);border:1px solid var(--border);
-    border-radius:14px;padding:24px;
+    border-radius:14px;padding:22px;
+    position:relative;
   }
-  .testimonial-photo{
-    width:40px;height:40px;border-radius:50%;
-    background:var(--rose-soft);border:1px solid rgba(255,92,138,0.35);
-    margin-bottom:16px;
+  .testimonial-card::before{
+    content:"“";
+    font-family:Georgia,serif;font-style:normal;
+    color:var(--rose);font-size:36px;line-height:1;
+    display:block;margin-bottom:6px;
   }
   .testimonial-text{
-    color:var(--white);font-size:14px;line-height:1.55;margin-bottom:14px;
+    color:var(--white);font-size:14px;line-height:1.55;margin-bottom:16px;
   }
   .testimonial-name{
     color:var(--silver);font-size:12.5px;
+    padding-top:12px;border-top:1px solid var(--border);
+  }
+  @media(max-width:720px){
+    .testimonial-grid{
+      grid-template-columns:none;
+      display:flex;gap:12px;overflow-x:auto;
+      scroll-snap-type:x proximity;
+      padding-bottom:6px;
+    }
+    .testimonial-card{
+      flex:0 0 82vw;scroll-snap-align:start;
+    }
   }
 
   /* ---------- GALERIA DESLIZABLE ---------- */
@@ -889,19 +903,11 @@ src="https://www.facebook.com/tr?id=1597676798806050&ev=PageView&noscript=1"
   </div>
 </section>
 
-<section class="section">
-  <div class="wrap">
-    <div class="dedication">
-      <div>
-        <div class="card-mock">
-          Para el que arranca el día en dos ruedas. Feliz Biker Day, mi amor.
-        </div>
-      </div>
-      <div>
-        <h3>Las palabras también van en la caja</h3>
-        <p>Incluimos una tarjeta de dedicatoria escritas por ti, porque lo que más recuerda un biker no es la moto — es quién se la regaló.</p>
-      </div>
-    </div>
+
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap" style="max-width:560px;text-align:center;">
+    <a href="#" id="whatsapp-cta-3" class="btn-primary" style="display:inline-block;">Pedir mi box por WhatsApp</a>
   </div>
 </section>
 
@@ -910,6 +916,8 @@ src="https://www.facebook.com/tr?id=1597676798806050&ev=PageView&noscript=1"
   <p>Grupo Marpe E.I.R.L. · RUC 20261613106</p>
 </footer>
 
+
+  
 <script>
   var WHATSAPP_NUMBER = "51970667052";
 
@@ -961,8 +969,10 @@ src="https://www.facebook.com/tr?id=1597676798806050&ev=PageView&noscript=1"
     return lines.join("\n");
   }
 
-  ["whatsapp-cta", "whatsapp-cta-2"].forEach(function(id){
-    var waLink = document.getElementById(id);
+
+  ["whatsapp-cta", "whatsapp-cta-2", "whatsapp-cta-3"].forEach(function(id){
+  
+  var waLink = document.getElementById(id);
     if (waLink){
       waLink.addEventListener('click', function(e){
         e.preventDefault();
