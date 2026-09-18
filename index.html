@@ -399,11 +399,15 @@ src="https://www.facebook.com/tr?id=1597676798806050&ev=PageView&noscript=1"
   }
   .options-row::-webkit-scrollbar{height:5px;}
   .options-row::-webkit-scrollbar-thumb{background:var(--border);border-radius:10px;}
-  .option-card{
+
+  
+  
+  
+   .option-card{
     flex:0 0 208px;scroll-snap-align:start;
     background:var(--card);border:1.5px solid var(--border);
-    border-radius:16px;padding:12px;cursor:pointer;
-    display:block;position:relative;
+    border-radius:16px;padding:0;cursor:pointer;
+    display:block;position:relative;overflow:hidden;
     transition:border-color .15s ease, background .15s ease;
   }
   .option-card input{position:absolute;opacity:0;pointer-events:none;}
@@ -422,10 +426,10 @@ src="https://www.facebook.com/tr?id=1597676798806050&ev=PageView&noscript=1"
     box-shadow:0 2px 8px rgba(0,0,0,0.4);
   }
   .option-photo{
-    width:100%;aspect-ratio:1/1;border-radius:11px;
+    width:100%;aspect-ratio:1/1;border-radius:0;
     background:repeating-linear-gradient(45deg, #1c1c1f 0 10px, #1a1a1d 10px 20px);
-    border:1px solid var(--border);
-    margin-bottom:12px;
+    border:none;
+    margin-bottom:0;
     display:flex;align-items:center;justify-content:center;
     background-size:cover;background-position:center;
     overflow:hidden;
@@ -438,6 +442,9 @@ src="https://www.facebook.com/tr?id=1597676798806050&ev=PageView&noscript=1"
   .option-name{
     display:block;font-family:'Inter';font-weight:600;
     font-size:15px;color:var(--white);margin-bottom:4px;
+    padding:12px 12px 0;
+  
+  
   }
   .option-desc{
     display:block;color:var(--silver);font-size:12.5px;line-height:1.45;
