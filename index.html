@@ -249,17 +249,19 @@ src="https://www.facebook.com/tr?id=1597676798806050&ev=PageView&noscript=1"
   .overview-grid{
     display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
   }
-  .overview-card{
+ 
+    .overview-card{
     background:var(--card);border:1px solid var(--border);
-    border-radius:14px;padding:16px;text-align:left;
+    border-radius:14px;padding:0;text-align:left;
+    overflow:hidden;
     transition:border-color .2s ease;
   }
   .overview-card:hover{border-color:#3a3a3f;}
   .overview-photo{
-    width:100%;aspect-ratio:1/1;border-radius:11px;
+    width:100%;aspect-ratio:1/1;border-radius:0;
     background:repeating-linear-gradient(45deg, #1c1c1f 0 12px, #1a1a1d 12px 24px);
-    border:1px dashed var(--border);
-    margin-bottom:16px;
+    border:none;
+    margin-bottom:0;
     display:flex;align-items:center;justify-content:center;
     overflow:hidden;
   }
@@ -267,8 +269,11 @@ src="https://www.facebook.com/tr?id=1597676798806050&ev=PageView&noscript=1"
   .overview-card h3{
     font-family:'Inter';font-style:normal;font-weight:600;
     font-size:16px;color:var(--white);margin-bottom:6px;
+    padding:16px 16px 0;
   }
-  .overview-card p{color:var(--silver);font-size:13px;line-height:1.5;}
+  .overview-card p{color:var(--silver);font-size:13px;line-height:1.5;padding:0 16px 16px;}
+  
+  
   @media(max-width:720px){
     .overview-grid{grid-template-columns:1fr;}
   }
